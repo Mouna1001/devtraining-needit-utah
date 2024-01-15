@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c8a0eff697e7b1102a0bb5a6f053af6c" label="testexo1" max_length="40" name="x_58872_needit_testexo1" type="collection">
+        <element label="price" max_length="40" name="price" type="integer"/>
+        <element label="Product name" max_length="40" name="product_name" type="string"/>
+        <element label="stock" max_length="32" name="stock" reference="x_58872_needit_stock" type="reference"/>
+        <index name="index">
+            <element name="stock"/>
+        </index>
+    </element>
+</database>
