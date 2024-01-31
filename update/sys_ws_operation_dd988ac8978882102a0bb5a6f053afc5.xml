@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>getinc</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+ 
+    // implement resource here
+    var sysID= request.pathParams.sysid;
+    var gr= new GlideRecord('x_58872_needit_needita');
+    gr.addQuery('sys_id',sysID);
+    gr.query();
+    if (gr.next()){
+        var body={};
+        body.number=gr.number;
+        body.short_description=gr.short_description;
+        response.setBody(body);
+    }
+ 
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_58872_needit/restdemo/getinc/{sysid}</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/getinc/{sysid}</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-01-25 14:31:17</sys_created_on>
+        <sys_id>dd988ac8978882102a0bb5a6f053afc5</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>getinc</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ws_operation_dd988ac8978882102a0bb5a6f053afc5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-01-25 14:41:36</sys_updated_on>
+        <web_service_definition display_value="RestDemo">05e58248978882102a0bb5a6f053af95</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
